@@ -1,10 +1,13 @@
 package com.java.stream;
 
-public class SaleData {
+public class SalesData {
 	String month;
 	Double amt;
+
+	public SalesData() {
+	}
 	
-	public SaleData(String month, Double amt) {
+	public SalesData(String month, Double amt) {
 		this.month = month;
 		this.amt = amt;
 	}
@@ -29,8 +32,5 @@ public class SaleData {
 	public String toString() {
 		return "SaleData [month=" + month + ", amt=" + amt + "]";
 	}
-
-
-	
 	
 }
