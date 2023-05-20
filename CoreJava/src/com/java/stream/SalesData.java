@@ -1,6 +1,7 @@
 package com.java.stream;
 
 public class SalesData {
+	String cat;
 	String month;
 	Double amt;
 
@@ -10,6 +11,20 @@ public class SalesData {
 	public SalesData(String month, Double amt) {
 		this.month = month;
 		this.amt = amt;
+	}
+
+	public SalesData(String cat, String month, Double amt) {
+		this.cat = cat;
+		this.month = month;
+		this.amt = amt;
+	}
+
+	public String getCat() {
+		return cat;
+	}
+
+	public void setCat(String cat) {
+		this.cat = cat;
 	}
 
 	public String getMonth() {
@@ -30,7 +45,7 @@ public class SalesData {
 
 	@Override
 	public String toString() {
-		return "SaleData [month=" + month + ", amt=" + amt + "]";
+		return "SalesData [cat=" + cat + ", month=" + month + ", amt=" + amt + "]";
 	}
 	
 }
