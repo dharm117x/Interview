@@ -1,10 +1,10 @@
-/.metadata/
-/.settings/
+.metadata/
 
 bin/
 target/
 build/
 
-*.prefs
-*.class
-
+.class
+.project
+.classpath
+.settings
