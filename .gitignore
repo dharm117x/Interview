@@ -3,6 +3,7 @@
 bin/
 target/
 build/
+Servers/
 
 .class
 .project

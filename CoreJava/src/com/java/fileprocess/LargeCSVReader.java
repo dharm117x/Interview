@@ -16,7 +16,7 @@ import com.java.stream.StreamGroupApi;
 
 public class LargeCSVReader {
 	public static void main(String[] args) {
-		List<SalesData> datas = processInputFile("salesdata2.csv");
+		List<SalesData> datas = processInputFile("salesdata.csv");
 		System.out.println(datas);
 		StreamGroupApi.groupedByMonth(datas);
 	}
@@ -24,11 +24,9 @@ public class LargeCSVReader {
 	private static Function<String, SalesData> mapToItem = (line) -> {
 		String[] p = line.split(",");// a CSV has comma separated lines
 		SalesData item = new SalesData();
-		item.setMonth(p[0]);
-		item.setAmt(Double.parseDouble((p[1])));
-		if(p.length > 2 && p[2]!= null) {
-			item.setCat(p[2]);
-		}
+		item.setCat(p[0]);
+		item.setMonth(p[1]);
+		item.setAmt(Double.parseDouble((p[2])));
 		return item;
 	};
 

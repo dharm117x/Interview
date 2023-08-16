@@ -1,5 +1,8 @@
 package com.spring.config;
 
+import org.apache.solr.client.solrj.SolrClient;
+import org.apache.solr.client.solrj.impl.HttpSolrClient;
+import org.apache.solr.client.solrj.impl.XMLResponseParser;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -20,6 +23,14 @@ import com.spring.intercepter.LogIntercepter;
 @Import({SpringSecurityConfig.class})
 public class SpringWebConfig implements WebMvcConfigurer {
 
+	@Bean
+    public SolrClient solrClient() {
+		String urlString = "http://localhost:8983/solr/bigboxstore";
+		HttpSolrClient solr = new HttpSolrClient.Builder(urlString).build();
+		solr.setParser(new XMLResponseParser());
+        return solr;
+    }
+	
 	@Bean
 	public InternalResourceViewResolver viewresolver() {
 		InternalResourceViewResolver ivr = new InternalResourceViewResolver();

@@ -7,6 +7,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
@@ -24,14 +26,17 @@ public class SpringWebConfig implements WebMvcConfigurer {
         
         return tilesConfigurer;
     }
+	
+	@Bean
+	public InternalResourceViewResolver viewresolver() {
+		InternalResourceViewResolver ivr = new InternalResourceViewResolver();
+		ivr.setPrefix("/WEB-INF/pages/");
+		ivr.setSuffix(".jsp");
+		ivr.setViewClass(JstlView.class);
+		return ivr;
+	}
     
-    @Override
-    public void configureViewResolvers(ViewResolverRegistry registry) {
-        TilesViewResolver viewResolver = new TilesViewResolver();
-        registry.viewResolver(viewResolver);
-    }
     
-    @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/static/**")
           .addResourceLocations("/static/");

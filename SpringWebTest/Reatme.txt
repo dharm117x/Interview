@@ -1,0 +1,7 @@
+Solr Setup 
+-----------------------
+solr start -p 8983
+
+
+solr create -c bigboxstore
+
