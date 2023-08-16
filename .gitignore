@@ -3,5 +3,5 @@
 bin/
 target/
 build/
-
+*.prefs
 *.class
