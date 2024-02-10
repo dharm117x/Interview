@@ -7,6 +7,8 @@ import java.nio.file.Files;
 import java.security.Key;
 import java.security.KeyFactory;
 import java.security.NoSuchAlgorithmException;
+import java.security.PrivateKey;
+import java.security.PublicKey;
 import java.security.Signature;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
@@ -24,6 +26,17 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class Common {
 
+	static {
+		java.security.Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
+	}
+
+	public static void main(String[] args) throws Exception {
+		PublicKey pubKey = readPublicKey(new File("public_key.pem"));
+		System.out.println("PuK-->"+pubKey);
+		PrivateKey privateKey = readPrivateKey(new File("private_key.pem"));
+		System.out.println("PrK-->"+privateKey);
+	}
+	
 	public static String fileReader(String filePath) throws IOException {
 		return new String(Files.readAllBytes(new File(filePath).toPath()), Charset.defaultCharset());
 	}
@@ -70,7 +83,7 @@ public class Common {
 
 	    String publicKeyPEM = key
 	      .replace("-----BEGIN PUBLIC KEY-----", "")
-	      .replaceAll("\n", "")
+	      .replaceAll("\r\n", "")
 	      .replace("-----END PUBLIC KEY-----", "");
 
 	    byte[] encoded = Base64.getDecoder().decode(publicKeyPEM);
@@ -85,7 +98,7 @@ public class Common {
 
 	    String privateKeyPEM = key
 	      .replace("-----BEGIN RSA PRIVATE KEY-----", "")
-	      .replaceAll("\n", "")
+	      .replaceAll("\r\n", "")
 	      .replace("-----END RSA PRIVATE KEY-----", "");
 
 	    byte[] encoded = Base64.getDecoder().decode(privateKeyPEM);

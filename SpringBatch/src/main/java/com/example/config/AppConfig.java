@@ -40,7 +40,7 @@ public class AppConfig {
 	@Bean
 	protected DataSource dataSource() {
 		SimpleDriverDataSource sds = new SimpleDriverDataSource();
-		sds.setDriverClass(oracle.jdbc.driver.OracleDriver.class);
+		//sds.setDriverClass(oracle.jdbc.driver.OracleDriver.class);
 		sds.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
 		sds.setUsername("projectdb");
 		sds.setPassword("admin");

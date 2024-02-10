@@ -10,6 +10,7 @@ public class Utility {
 	public static Properties properties() throws IOException {
 		Properties pr = new Properties();
 		pr.load(Files.newInputStream(Paths.get("config.properties")));
+
 		return pr;
 	}
 }

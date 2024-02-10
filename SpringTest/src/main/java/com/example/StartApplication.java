@@ -16,7 +16,7 @@ public static void main(String[] args) throws InterruptedException {
 
 	String[] names = context.getBeanDefinitionNames();
 	for (String string : names) {
-		System.out.println("Name::->" + string);
+		//System.out.println("Name::->" + string);
 	}
 	TestBean bean1 = context.getBean("testBean1",TestBean.class);
 	System.out.println("OP1 : "+bean1);

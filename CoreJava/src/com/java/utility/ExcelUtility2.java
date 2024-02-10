@@ -20,8 +20,8 @@ public class ExcelUtility2 {
 		datas.add(new Object[]{ "Bob Johnson", 40, "Paris" });
 
 		byte[] excel = genrateExcel(headers, datas, "Person");
+		
 		System.out.println(excel);
-
 	}
 
 	public static byte[] genrateExcel(String[] headers, List<Object[]> rows, String sheetName) {
@@ -56,9 +56,11 @@ public class ExcelUtility2 {
 
 			workbook.write(os);
 			return os.toByteArray();
+
 		} catch (Exception e) {
 
 		}
+
 		return null;
 	}
 }

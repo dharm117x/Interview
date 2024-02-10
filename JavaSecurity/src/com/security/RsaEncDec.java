@@ -30,7 +30,6 @@ public class RsaEncDec {
 		cipher.init(Cipher.DECRYPT_MODE, PemFileReader.getPrivateKey(privateKeyPath));
 		byte[] doFinal = cipher.doFinal(Base64.getDecoder().decode(encData));
 		String plainData = new String(doFinal);
-		System.out.println("DC ::" + plainData);
 
 		return plainData;
 	}
@@ -51,7 +50,6 @@ public class RsaEncDec {
 		cipher.init(Cipher.DECRYPT_MODE, JKSFileReader.getPrivateKey(aliasPrivate));
 		byte[] doFinal = cipher.doFinal(Base64.getDecoder().decode(encData));
 		String plainData = new String(doFinal);
-		System.out.println("DC ::" + plainData);
 
 		return plainData;
 	}

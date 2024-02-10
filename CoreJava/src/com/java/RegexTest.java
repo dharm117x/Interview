@@ -10,12 +10,9 @@ import com.java.utility.Utility;
 
 public class RegexTest {
 	public static void main(String[] args) throws IOException {
-		String plainPassword = "aaaAaa123";
+		String plainPassword = "aaaAaa123\\";
 		Properties pr = Utility.properties();
 		System.out.println(pr.getProperty("server"));
-		
-		boolean matches = plainPassword.matches(".*\\w");
-		System.out.println(matches);
 		
 		
 		Map<String, String> map = new HashMap<>();
@@ -27,9 +24,9 @@ public class RegexTest {
 
 		for (Entry<String, String> entry : map.entrySet()) {
 			if (plainPassword.matches(entry.getValue())) {
-				System.out.println("ok."+entry.getKey());
+				System.out.println("ok."+entry.getKey()+" -> "+entry.getValue());
 			}else {
-				System.out.println("notok."+entry.getKey());
+				System.out.println("notok."+entry.getKey()+" -> "+entry.getValue());
 			}
 
 		}

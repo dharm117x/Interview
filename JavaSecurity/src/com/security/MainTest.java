@@ -15,10 +15,10 @@ public static void main(String[] args) throws Exception {
 //	String decrypt = RsaEncDec.decrypt(encrypt2, "./private_key.pem");
 //	System.out.println(decrypt);
 	
-	String encrypt3 = RsaEncDec.encryptWithJks("Hello", "dk.com");
-	System.out.println("EC "+encrypt3);
+	String encrypt3 = RsaEncDec.encryptWithJks("Hello Dharmenda", "dk.com");
+	System.out.println("EC-->"+encrypt3);
 	String decrypt3 = RsaEncDec.decryptWithJks(encrypt3, "dk.com");
-	System.out.println("DC "+decrypt3);
+	System.out.println("DC-->"+decrypt3);
 	
 	
 	

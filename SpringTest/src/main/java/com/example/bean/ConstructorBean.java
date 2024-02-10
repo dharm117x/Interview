@@ -9,12 +9,17 @@ public class ConstructorBean {
 	private BeanA beanA;
 	private BeanB beanB;
 	
+	public ConstructorBean() {
+		System.out.println("ConstructorBean.ConstructorBean()");
+	}
+	
+	@Autowired
 	public ConstructorBean(BeanA beanA) {
 		System.out.println("ConstructorBean.ConstructorBean(1)");
 		this.beanA = beanA;
 	}
 
-	@Autowired
+	//@Autowired
 	public ConstructorBean(BeanA beanA, BeanB beanB) {
 		System.out.println("ConstructorBean.ConstructorBean(1, 2)");
 		this.beanA = beanA;

@@ -16,12 +16,14 @@ import net.oauth.signature.pem.PEMReader;
 
 public class PemFileReader {
 	private static final String RSA = "RSA";
-	
+
 	public static void main(String[] args) throws GeneralSecurityException, IOException {
 		PublicKey pubKey = getPublicKey("public_key.pem");
-		System.out.println(""+pubKey);
+		System.out.println("PuK-->" + pubKey);
+		PrivateKey privateKey = getPrivateKey("private_key.pem");
+		System.out.println("PrK-->" + privateKey);
 	}
-	
+
 	public static PublicKey getPublicKey(String publicKeyFilename) throws GeneralSecurityException, IOException {
 		PEMReader reader = new PEMReader(publicKeyFilename);
 		byte[] bytes = reader.getDerBytes();
@@ -57,7 +59,7 @@ public class PemFileReader {
 			KeySpec keySpec = new PKCS8EncodedKeySpec(bytes);
 			KeyFactory fac = KeyFactory.getInstance(RSA);
 			privateKey = fac.generatePrivate(keySpec);
-		} else if (PEMReader.PRIVATE_PKCS1_MARKER.equals(reader.getBeginMarker())) {
+		} else if (PEMReader.PRIVATE_PKCS8_MARKER.equals(reader.getBeginMarker())) {
 			KeySpec keySpec = new X509EncodedKeySpec(bytes);
 			KeyFactory fac = KeyFactory.getInstance(RSA);
 			privateKey = fac.generatePrivate(keySpec);
