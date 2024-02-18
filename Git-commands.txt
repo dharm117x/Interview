@@ -1,0 +1,60 @@
+GIT setup:
+----------------
+git config --global user.email "dharm117x@gmail.com"
+git config --global user.name "Dharmendra kumar"
+
+git config --global core.autocrlf true
+
+
+Passwrod reset:
+https://github.com/settings/tokens
+genrate token:   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
+
+git remote -v
+git remote show master
+git remote rm master
+git remote add origin https://github.com/dharm117x/microservice.git
+
+git remote set-url origin git@github.com:USERNAME/REPONAME.git
+git remote set-url origin https://dharm117x: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@github.com/dharm117x/Linux.git
+
+
+Git repositry manage:
+----------------------
+1. Add all files in git repos:
+git add --all
+
+2. Commit locally:
+git commit -m "hybris 6 b2c setup"
+
+3. Git restore after add:
+git restore --staged  core-customize/hybris/bin/custom/dkshop/dkshopcore/lib/jstl-1.2.jar
+
+4. git remote update
+git push
+
+GIT branch manage:
+------------------
+
+
+
+GIT Ignore files
+---------------------------
+git rm --cached .project
+git rm --cached .classpath
+git rm --cached -r .settings
+git rm --cached -r *
+
+.gitignore
+---------------
+.metadata/
+
+bin/
+target/
+build/
+
+.class
+.project
+.classpath
+.settings
+
