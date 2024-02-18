@@ -8,13 +8,17 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class UsingBuffer {
-public static void main(String[] args) throws FileNotFoundException, IOException {
+public static void main(String[] args) {
 	String pathname = "test.txt";
 	try(BufferedReader in = new BufferedReader(new FileReader(pathname ))) {
 	    String line;
 	    while ((line = in.readLine()) != null) {
 	    	System.out.println(line);
 	    }
+	} catch (FileNotFoundException e) {
+		e.printStackTrace();
+	} catch (IOException e) {
+		e.printStackTrace();
 	}
 	
 	try(BufferedInputStream bi = new BufferedInputStream(new FileInputStream(pathname))) {
@@ -25,6 +29,10 @@ public static void main(String[] args) throws FileNotFoundException, IOException
 	      data = bi.read();
 	      System.out.print((char)data);
 	    }
+	} catch (FileNotFoundException e) {
+		e.printStackTrace();
+	} catch (IOException e) {
+		e.printStackTrace();
 	}
 }
 }

@@ -8,7 +8,7 @@ public class MemoryLeak {
 	static List<Double> datas = new ArrayList<>();
 	
 	private void addDataToList() throws InterruptedException {
-		for (int i = 0; i < 100000000; i++) {
+		for (int i = 0; i < 1000000; i++) {
 			datas.add(Math.random());
 		}
 		System.out.println("Step 0");

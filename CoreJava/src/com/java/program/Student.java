@@ -1,4 +1,4 @@
-package com.java.interview;
+package com.java.program;
 
 public class Student {
 	int id;

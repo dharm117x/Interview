@@ -1,4 +1,4 @@
-package com.java.interview;
+package com.java.program;
 
 public class PrimeNumber {
 	public static void main(String[] args) {

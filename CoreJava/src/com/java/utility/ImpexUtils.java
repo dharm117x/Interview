@@ -45,7 +45,7 @@ public class ImpexUtils {
 					}
 
 					String impexFile = new File(filepath).getParent() + "/" + filename + "_" + i + "_" + min + ".txt";
-					Files.writeString(Paths.get(impexFile), br, StandardCharsets.UTF_8);
+					//Files.writeString(Paths.get(impexFile), br, StandardCharsets.UTF_8);
 				}
 
 			}

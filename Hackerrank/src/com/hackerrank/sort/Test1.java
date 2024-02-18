@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Test1 {
 	public static void main(String[] args) {
-		Integer[] spam = new Integer[] { 4, 1, 2, 3 };
+		Integer[] spam = new Integer[] { 4, 1, 2, 3 ,8 ,5, 6};
 		List<Integer> list = Arrays.asList(spam);
 		countSwaps(list);
 	}
