@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<form-beans>
+	</form-beans>
+
+	<global-exceptions></global-exceptions>
+	
+	<global-forwards>
+		<forward name="welcome" path="/welcome.do"></forward>
+	</global-forwards>
+
+	<action-mappings>
+		<action path="/welcome"
+			type="no.hackeriet.struts1Spring.struts.DelegatingActionProxy">
+			<forward name="success" path="/pages/welcome.jsp" />
+		</action>
+
+	</action-mappings>
+
+	<message-resources parameter="MessageResource"></message-resources>
+
+	<!-- : org.springframework.web.struts.ContextLoaderPlugIn  -->
+	<plug-in
+		className="no.hackeriet.struts1Spring.struts.ContextLoaderPlugIn">
+		<set-property property="contextConfigLocation"
+			value="/WEB-INF/action-servlet.xml" />
+	</plug-in>
+	
+	<plug-in
+		className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property
+			value="/WEB-INF/validator-rules.xml"
+			property="pathnames" />
+	</plug-in>
+
+</struts-config>
