@@ -1,0 +1,3 @@
+# Module message
+# RPC service class, partial path of RPC policy file
+com.example.shared.MessageService, 9078FEA4D0D5156A45C06BFEA899F7AB.gwt.rpc

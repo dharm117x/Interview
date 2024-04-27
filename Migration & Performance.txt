@@ -1,0 +1,76 @@
+Java 8 to 17
+---------------
+8:
+Lambda Expressions
+Functional Interfaces
+Method Reference
+Streams
+Comparable and Comparator
+Optional Class
+Date/Time API
+Miscellaneous
+
+11:
+Java 10 was the last free Oracle JDK release that we could use commercially without a license. Starting with Java 11, there’s no free long-term support (LTS) from Oracle.
+Thankfully, Oracle continues to provide Open JDK releases, which we can download and use without charge.
+
+New String Methods: isBlank, lines, strip, stripLeading, stripTrailing, and repeat.
+New File Methods:readString and writeString static methods from the Files
+Collection to an Array:
+List sampleList = Arrays.asList("Java", "Kotlin");
+String[] sampleArray = sampleList.toArray(String[]::new);
+assertThat(sampleArray).containsExactly("Java", "Kotlin");
+
+In release 11, it has now completely removed:
+---------------------------------------------------
+Java API for XML-Based Web Services (java.xml.ws)
+Java Architecture for XML Binding (java.xml.bind)
+JavaBeans Activation Framework (java.activation)
+Common Annotations (java.xml.ws.annotation)
+Common Object Request Broker Architecture (java.corba)
+JavaTransaction API (java.transaction)
+
+
+Migration java 7 -17
+================================
+1. Crate branch name branch/java_migration17 from develop for migration related code change.
+2. Setup local machine with latest JDK tolls ex. jdk 17
+3. Checkout branch code in your local machine and compile code with new JDK17. its may be chance of comilation error because of some deprected class or method are renamed or removed then fixed accordingly.
+4. In New JDK enterprise edition related package are removed so we need to add those jars accrdingly.
+5. Some third party jars may not support jdk 17 so either take new version or patch from that vendor.
+6. After fixed locally we have to commit our code in branch then we need to deploy in lower env so we have to setup jdk 17 on those env and update CI-CD tools for building process.
+7. After succefull build we need to deploy on dev for regression testing if found some error or exception then fixed accordingly.
+
+
+Springboot 1 to 2
+--------------------
+
+
+Springboot 2 to 3
+--------------------
+
+
+Performance Optimization:
+-----------------------
+Choose the Right Data Structures
+Optimize Memory Usage
+Use StringBuilder for String Concatenation
+Optimize Loops
+Use Caching and Memoization
+Take Advantage of Java Concurrency
+Profile and Benchmark Your Code
+Use Lazy Initialization
+Optimize Garbage Collection
+Keep Up-to-Date with Java Updates
+
+
+Code review:
+------------------
+Follow Java code conventions
+Replace imperative code with lambdas and streams
+Beware of the NullPointerException
+Directly assigning references from client code to a field
+Handle exceptions with care
+Think twice before you expose
+Override hashCode when overriding equals
+ 

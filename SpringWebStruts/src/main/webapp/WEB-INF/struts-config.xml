@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE struts-config PUBLIC
           "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
-          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
 
 <struts-config>
 	<form-beans>
@@ -15,6 +15,11 @@
 
 	<action-mappings>
 		<action path="/welcome"
+			type="no.hackeriet.struts1Spring.struts.DelegatingActionProxy">
+			<forward name="success" path="/pages/welcome.jsp" />
+		</action>
+		
+		<action path="/login" 
 			type="no.hackeriet.struts1Spring.struts.DelegatingActionProxy">
 			<forward name="success" path="/pages/welcome.jsp" />
 		</action>

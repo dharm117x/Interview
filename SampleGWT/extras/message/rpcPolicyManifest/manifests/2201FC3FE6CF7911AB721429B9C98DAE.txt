@@ -1,0 +1,2 @@
+serviceClass: com.example.shared.MessageService
+path: 9078FEA4D0D5156A45C06BFEA899F7AB.gwt.rpc

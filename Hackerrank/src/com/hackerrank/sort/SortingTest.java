@@ -3,7 +3,7 @@ package com.hackerrank.sort;
 import java.util.Arrays;
 import java.util.List;
 
-public class Test1 {
+public class SortingTest {
 	public static void main(String[] args) {
 		Integer[] spam = new Integer[] { 4, 1, 2, 3 ,8 ,5, 6};
 		List<Integer> list = Arrays.asList(spam);

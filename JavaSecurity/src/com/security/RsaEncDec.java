@@ -10,7 +10,8 @@ public class RsaEncDec {
 		String encrypt = encrypt("Hello Java World", "./public_key.pem");
 		System.out.println("EC::" + encrypt);
 		encrypt = Common.fileReader("./data.txt");
-		decrypt(encrypt, "./private_key.pem");
+		String decrypt = decrypt(encrypt, "./private_key.pem");
+		System.out.println(decrypt);
 	}
 
 	public static String encrypt(String plainData, String publicKeyPath) throws Exception {

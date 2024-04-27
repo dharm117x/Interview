@@ -1,0 +1,225 @@
+Interview Q A:
+====================
+About my self:
+
+My name is dharmendra kumar having more the 11 years of experience in java-j2ee and hybris commerce also working in different domain like e-commerce and banking.
+My current project is web application based on sap hybris commerce 2022 in which we developing rest based API services to fulfil our client requirements.  
+My responsibility includes requirement gathering, creating story, estimation and developed into features in application, 
+providing technical support and knowledge transfer to my team members.
+
+Role &Responsibility:
+----------------------
+Design, develop, and implement Java-based applications
+Lead a team of Java developers in the design, development, and implementation of Java-based applications
+Provide technical leadership and direction for Java development projects
+Ensure that allJava development projects are completed on time and within budget
+Coordinate with other departments and teams to ensure smooth delivery of Java applications
+Coordinate business & front-line technical support teams to provide production support.
+Provide project status and resource estimates to Senior IT leadership
+
+Collaborate with the customer Business Analysts & (subject matter expert)SMEs to perform detailed requirements analysis
+Responsible for Components Design, Construction & Unit Testing of assigned components/modules
+Perform technical review and resolve any technical challenges
+Coordinate with customer stakeholders and bridge the offshore communication
+
+
+
+Core java QA
+====================
+The GoF Design Patterns:
+----------------------
+->Creational Patterns for the creation of objects; 
+Singleton Design Pattern
+Factory Design Pattern
+Abstract Factory Design Pattern
+Builder Design Pattern
+Prototype Design Pattern
+Object Pool Design Pattern
+
+->Structural Patterns to provide relationships between objects
+Adapter Design Pattern
+Facade Design Pattern
+Proxy Design Pattern
+Composite Design Pattern
+Decorator Design Pattern
+
+->Behavioral Patterns to help define how objects interact.
+Iterator Design Pattern
+Chain of responsibility
+Command Design Pattern
+
+->Collection API:
+----------------
+>Arraylist:
+ArrayList is a resizable array implementation in Java.ArrayList grows dynamically and ensures that there is always a space to add elements.
+-Default capacity 10 when capacity full its increase by 50% and copies all old elements from the old array to the new one. Repeated resizes will add load for memory allocation and garbage collection and the time to do the copy. if we know size of data best to pass that size as the initialCapacity to the ArrayList constructor.
+
+ 
+>LinkedList:
+A linear data structure used to store the elements in contiguous locations is called a Linked List in Java.
+
+Since a LinkedList acts as a dynamic array and we do not have to specify the size while creating it, the size of the list automatically increases when we dynamically add and remove items. And also, the elements are not stored in a continuous fashion. Therefore, there is no need to increase the size. Internally, the LinkedList is implemented using the doubly linked list data structure
+
+>Hashmap:
+HashMap in Java stores the data in (Key, Value) pairs, Hashing is a process of converting an object into integer form by using the method hashCode(). It’s necessary to write the hashCode() method properly for better performance of HashMap
+
+1. Initial Capacity – It is the capacity of HashMap at the time of its creation (It is the number of buckets a HashMap can hold when the HashMap is instantiated). In java, it is 2^4=16 initially, meaning it can hold 16 key-value pairs.
+2. Load Factor – It is the percent value of the capacity after which the capacity of Hashmap is to be increased (It is the percentage fill of buckets after which Rehashing takes place). In java, it is 0.75f by default, meaning the rehashing takes place after filling 75% of the capacity.
+3. Threshold – It is the product of Load Factor and Initial Capacity. In java, by default, it is (16 * 0.75 = 12). That is, Rehashing takes place after inserting 12 key-value pairs into the HashMap.
+4. Rehashing – It is the process of doubling the capacity of the HashMap after it reaches its Threshold. In java, HashMap continues to rehash(by default) in the following sequence – 2^4, 2^5, 2^6, 2^7, …. so on. 
+
+->Stream API:
+----------------
+Stream API is a way to express and process collections of objects. Enable us to perform operations like filtering, mapping,reducing and sorting.
+
+Operation:
+------------
+Intermediate-filter, map, sorting, count, 
+Terminate-Collect, findAny,firstget,collect,
+
+Consumer: is a functional interface that accepts a single input and returns no output
+foreach, return nothing.
+--> forEach 
+
+Supplier: is a functional interface; it takes no arguments and returns a result
+-->Math.random()
+
+-> FunctionalInterface:
+--------------------
+A functional interface is an interface that contains only one abstract method however they can include any quantity of default and static methods. 
+Ex. Runnable, ActionListener, and Comparable are some of the examples of functional interfaces. 
+
+@FunctionalInterface annotation is used to ensure that the functional interface can’t have more than one abstract method.
+However, it is not mandatory to use this annotation.
+
+-> Exception handling:
+----------------------
+ClassClassNotFoundException - when you try to load a class at runtime using Class.forName() or loadClass() methods and requested classes are not found in classpath.
+
+OutOfMemoryError – thrown when the JVM cannot allocate more objects because it is out memory, and the garbage collector was unable to make more available
+
+StackOverflowError – occurs when the stack space for a thread has run out, typically because an application recurses too deeply
+ExceptionInInitializerError – signals that an unexpected exception occurred during the evaluation of a static initializer
+
+NoClassDefFoundError – its occurred when the class was present during compile time and the program was compiled and linked successfully but the class was not present during runtime. It is an error that is derived from LinkageError.
+
+UnsupportedClassVersionError – occurs when the JVM attempts to read a class file and determines that the version in the file is not supported, 
+normally because the file was generated with a newer version of Java
+
+
+Spring QA
+============
+The Spring IOC container is responsible for instantiating, configuring, and assembling the Spring beans. 
+
+->Spring Design pattern:
+-------------------------
+Singleton Design Pattern
+Factory Design Pattern
+Tempalte design pattern
+MVC design pattern
+Proxy Design Pattern
+flyweight design pattern
+
+
+
+
+Spring boot QA
+===============
+
+->Common Annotaion:
+@SpringBootApplication = @Configuration + @EnableAutoConfiguration + @ComponentScan
+
+@ConditionalOnBean Annotation Example
+Use when we want to define conditions based on the presence or absence of a specific bean:
+
+@PropertySource("classpath:config.properties")
+
+@RequestBody: binds method parameters to the request body.
+
+
+->Commonly used Spring boot starters:
+spring-boot-starter: core starter, including auto-configuration support, logging, and YAML
+spring-boot-starter-data-jpa: for using Spring Data JPA with Hibernate
+spring-boot-starter-security: for using Spring Security
+spring-boot-starter-web: for building web, including RESTful, applications using Spring MVC.
+spring-boot-starter-data-rest: Starter for exposing Spring Data repositories over REST using Spring Data REST
+spring-boot-starter-test: for testing Spring Boot applications
+
+
+->Production-Ready Applications:
+spring-boot-starter-actuator - To use advanced features like monitoring & tracing to your application out of the box
+spring-boot-starter-undertow, spring-boot-starter-jetty, spring-boot-starter-tomcat - To pick your specific choice of Embedded Servlet Container
+spring-boot-starter-logging - For Logging using log back
+spring-boot-starter-cache - Enabling Spring Framework’s caching support
+
+
+Spring Boot starters
+Spring Boot autoconfiguration
+Elegant configuration management
+Spring Boot Actuator
+Easy-to-use embedded servlet container support
+
+->Spring Boot Actuator provides production-ready features for monitoring and managing Spring Boot applications. 
+It offers a set of built-in endpoints and metrics that allow you to gather valuable insights into the health, performance, and management of your application.
+
+Health Monitoring: The actuator exposes a /health, detailed health checks for different components, such as the database, cache, and message brokers.
+Metrics Collection: The actuator collects various metrics about your application's performance and resource utilization. It exposes endpoints like /metrics and /prometheus
+Auditing and Tracing: Actuator allows you to track and monitor the activities happening within your application. It provides an /auditevents
+Environment Information: The actuator exposes an /info endpoint that displays general information about your application, such as version numbers, build details, and any custom information you want to include.
+Configuration Management: Actuator provides an /configprops endpoint that lists all the configuration properties used in your application.
+Remote Management: Actuator allows you to manage and interact with your application remotely. It provides various endpoints, such as /shutdown to gracefully shut down the application, /restart to restart the application, and /actuator to list all available endpoints.
+
+
+
+
+Rest API QA
+-------------
+REST(Representational State Transfer) 
+
+HATEOAS: stands for Hypermedia as the Engine of Application State and it is a component of RESTful API architecture and design. With the use of HATEOAS, the client-side needs minimal knowledge about how to interact with a server.
+A HATEOAS request allows you to not only send the data but also specify the related actions. The response will contain hypermedia links that allow the client to take further actions.
+
+
+REST services are scalable due to the statelessness that they do not store data on the server.
+
+REST APIs can be kept secure with the help of safety measures such as Authentication and authorization, API Server Validation, TSl/SSL Encryption, 
+Rate-limiting for DDoS attacks, and sensitive information such as username, password, or authentication token should not be visible in URIs
+
+GET, PUT, and DELETE are idempotent methods, because they always return the same resource, update the same resource, or remove the same resource, respectively.
+200 OK, 201 Created, 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 500 Internal Server Error, 502 Bad Gateway, 503 Service Unavailable.
+
+
+MicroSerives QA
+=================
+Microservices is an architectural style that structures an application as a collection of small, loosely coupled, and independently deployable services. 
+Each service represents a specific business capability and can be developed, deployed, and scaled independently
+
+->The three commonly used tools for Microservices are:
+Docker: Docker is a tool that lets developers set up apps in lightweight, portable containers in an automated way. It helps put the microservices and their dependencies into containers
+
+Kubernetes: Kubernetes is a powerful tool for managing, scaling, and automating the launch of Docker containers.
+
+Spring Boot: is a framework built on top of the Spring framework that simplifies the development of Java applications, including microservices. 
+It provides a convention-over-configuration approach, auto-configuration, and embedded servers, allowing developers to quickly create production-ready microservices
+
+->In Spring Boot, microservices can communicate with each other using various mechanisms:
+Synchronous HTTP/REST: Microservices can communicate via HTTP using RESTful APIs, exchanging data in JSON or XML formats. 
+Messaging: Asynchronous communication can be achieved using message queues or message brokers like RabbitMQ or Apache Kafka. 
+Service Discovery: Microservices can use service discovery mechanisms like Netflix Eureka or Spring Cloud Consul to locate and communicate with other services dynamically. 
+
+->Service registration and discovery is a mechanism that allows microservices to register themselves with a service registry and discover other services. 
+Service registries maintain a registry of available services, including their network locations and metadata. 
+Service discovery clients can query the registry to obtain the necessary information to communicate with other services.
+
+->Spring Cloud is a framework that provides a set of tools and libraries to simplify the development of microservices using Spring Boot. 
+It offers features like service discovery, client-side load balancing, distributed tracing, circuit breakers, and more
+
+->Circuit breaking is a design pattern used to handle and prevent cascading failures in microservice architectures. It involves monitoring the calls to external services and, 
+if a certain threshold of failures is reached, tripping a circuit breaker to stop further requests and return a fallback response.
+n Spring Boot, circuit breaking can be implemented using libraries like Netflix Hystrix or Resilience4j.
+
+->API Gateway is a service that acts as an entry point for all client requests in a microservices architecture. It sits between the clients and the microservices,
+routing requests, handling authentication/authorization, enforcing security, and providing additional cross-cutting concerns like rate limiting, logging, and monitoring.
+
+
+
