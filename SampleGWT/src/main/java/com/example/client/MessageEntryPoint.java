@@ -50,6 +50,7 @@ public class MessageEntryPoint implements EntryPoint {
 		vPanel.setHorizontalAlignment(VerticalPanel.ALIGN_RIGHT);
 		vPanel.add(closeButton);
 		vPanel.setVisible(false);
+		
 		RootPanel.get("serverResponseContainer").add(vPanel);
 
 		closeButton.addClickHandler(event -> {

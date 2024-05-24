@@ -9,9 +9,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.transaction.TransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.support.TransactionTemplate;
+
+import com.mysql.jdbc.Driver;
 
 @Configuration
 @EnableTransactionManagement
@@ -20,7 +21,7 @@ public class AppConfig {
 
 	@Bean
 	public JdbcTemplate jdbcTemplate() {
-		return new JdbcTemplate(dataSource());
+		return new JdbcTemplate(mysqlDataSource());
 	}
 
 	@Bean
@@ -31,17 +32,26 @@ public class AppConfig {
 	@Bean
 	public PlatformTransactionManager  transactionManager() {
 		DataSourceTransactionManager manager = new DataSourceTransactionManager();
-		manager.setDataSource(dataSource());
+		manager.setDataSource(mysqlDataSource());
 		manager.setValidateExistingTransaction(true);
 		return manager;
 	}
 
-	@Bean
-	protected DataSource dataSource() {
+	protected DataSource oracleDataSource() {
 		SimpleDriverDataSource sds = new SimpleDriverDataSource();
 		sds.setDriverClass(oracle.jdbc.driver.OracleDriver.class);
 		sds.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
 		sds.setUsername("projectdb");
+		sds.setPassword("admin");
+		return sds;
+	}
+
+	@Bean
+	protected DataSource mysqlDataSource() {
+		SimpleDriverDataSource sds = new SimpleDriverDataSource();
+		sds.setDriverClass(Driver.class);
+		sds.setUrl("jdbc:mysql://localhost:3306/jdbcdb");
+		sds.setUsername("root");
 		sds.setPassword("admin");
 		return sds;
 	}

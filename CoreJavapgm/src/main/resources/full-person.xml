@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<person xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="full-person.xsd">
+<person>
   <name>name</name>
   <address>
     <zip>1</zip>
     <city>city</city>
     <state>state</state>
   </address>
+  
 </person>

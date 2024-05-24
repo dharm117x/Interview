@@ -4,33 +4,33 @@
 MessageEntryPoint,,com.example.client.MessageEntryPoint,,com/example/client/MessageEntryPoint.java,23,-1
 s,com.example.client.MessageEntryPoint::$onModuleLoad(Lcom/example/client/MessageEntryPoint;)V,com.example.client.MessageEntryPoint,$onModuleLoad,com/example/client/MessageEntryPoint.java,26,0
 t,com.example.client.MessageEntryPoint::MessageEntryPoint() <init>,com.example.client.MessageEntryPoint,MessageEntryPoint,com/example/client/MessageEntryPoint.java,23,0
-u,com.example.client.MessageEntryPoint::lambda$0(Lcom/google/gwt/user/client/ui/Button;Lcom/google/gwt/user/client/ui/VerticalPanel;Lcom/google/gwt/event/dom/client/ClickEvent;)V,com.example.client.MessageEntryPoint,lambda$0,com/example/client/MessageEntryPoint.java,55,0
+u,com.example.client.MessageEntryPoint::lambda$0(Lcom/google/gwt/user/client/ui/Button;Lcom/google/gwt/user/client/ui/VerticalPanel;Lcom/google/gwt/event/dom/client/ClickEvent;)V,com.example.client.MessageEntryPoint,lambda$0,com/example/client/MessageEntryPoint.java,56,0
 a,com.example.client.MessageEntryPoint::messageServiceAsync,com.example.client.MessageEntryPoint,messageServiceAsync,com/example/client/MessageEntryPoint.java,24,-1
-MessageEntryPoint$1MyHandler,,com.example.client.MessageEntryPoint$1MyHandler,,com/example/client/MessageEntryPoint.java,61,-1
-v,com.example.client.MessageEntryPoint$1MyHandler::$sendMessageToServer(Lcom/example/client/MessageEntryPoint$1MyHandler;)V,com.example.client.MessageEntryPoint$1MyHandler,$sendMessageToServer,com/example/client/MessageEntryPoint.java,73,0
-w,com.example.client.MessageEntryPoint$1MyHandler::MessageEntryPoint$1MyHandler(Lcom/example/client/MessageEntryPoint;) <init>,com.example.client.MessageEntryPoint$1MyHandler,MessageEntryPoint$1MyHandler,com/example/client/MessageEntryPoint.java,61,0
-A,com.example.client.MessageEntryPoint$1MyHandler::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,com.example.client.MessageEntryPoint$1MyHandler,onClick,com/example/client/MessageEntryPoint.java,63,0
-B,com.example.client.MessageEntryPoint$1MyHandler::onKeyUp(Lcom/google/gwt/event/dom/client/KeyUpEvent;)V,com.example.client.MessageEntryPoint$1MyHandler,onKeyUp,com/example/client/MessageEntryPoint.java,67,0
-a,com.example.client.MessageEntryPoint$1MyHandler::this$01,com.example.client.MessageEntryPoint$1MyHandler,this$01,com/example/client/MessageEntryPoint.java,61,-1
-b,com.example.client.MessageEntryPoint$1MyHandler::val$closeButton7,com.example.client.MessageEntryPoint$1MyHandler,val$closeButton7,com/example/client/MessageEntryPoint.java,61,-1
-c,com.example.client.MessageEntryPoint$1MyHandler::val$nameField3,com.example.client.MessageEntryPoint$1MyHandler,val$nameField3,com/example/client/MessageEntryPoint.java,61,-1
-d,com.example.client.MessageEntryPoint$1MyHandler::val$sendButton4,com.example.client.MessageEntryPoint$1MyHandler,val$sendButton4,com/example/client/MessageEntryPoint.java,61,-1
-e,com.example.client.MessageEntryPoint$1MyHandler::val$serverResponseLabel6,com.example.client.MessageEntryPoint$1MyHandler,val$serverResponseLabel6,com/example/client/MessageEntryPoint.java,61,-1
-f,com.example.client.MessageEntryPoint$1MyHandler::val$textToServerLabel5,com.example.client.MessageEntryPoint$1MyHandler,val$textToServerLabel5,com/example/client/MessageEntryPoint.java,61,-1
-g,com.example.client.MessageEntryPoint$1MyHandler::val$vPanel8,com.example.client.MessageEntryPoint$1MyHandler,val$vPanel8,com/example/client/MessageEntryPoint.java,61,-1
-h,com.example.client.MessageEntryPoint$1MyHandler::val$warningLabel2,com.example.client.MessageEntryPoint$1MyHandler,val$warningLabel2,com/example/client/MessageEntryPoint.java,61,-1
-MessageEntryPoint$1MyHandler$1,,com.example.client.MessageEntryPoint$1MyHandler$1,,com/example/client/MessageEntryPoint.java,86,-1
-C,com.example.client.MessageEntryPoint$1MyHandler$1::$onFailure(Lcom/example/client/MessageEntryPoint$1MyHandler$1;Ljava/lang/Throwable;)V,com.example.client.MessageEntryPoint$1MyHandler$1,$onFailure,com/example/client/MessageEntryPoint.java,87,0
-D,com.example.client.MessageEntryPoint$1MyHandler$1::$onSuccess(Lcom/example/client/MessageEntryPoint$1MyHandler$1;Ljava/lang/String;)V,com.example.client.MessageEntryPoint$1MyHandler$1,$onSuccess,com/example/client/MessageEntryPoint.java,93,0
-F,com.example.client.MessageEntryPoint$1MyHandler$1::MessageEntryPoint$1MyHandler$1(Lcom/example/client/MessageEntryPoint$1MyHandler;) <init>,com.example.client.MessageEntryPoint$1MyHandler$1,MessageEntryPoint$1MyHandler$1,com/example/client/MessageEntryPoint.java,86,0
-a,com.example.client.MessageEntryPoint$1MyHandler$1::val$closeButton3,com.example.client.MessageEntryPoint$1MyHandler$1,val$closeButton3,com/example/client/MessageEntryPoint.java,86,-1
-b,com.example.client.MessageEntryPoint$1MyHandler$1::val$serverResponseLabel2,com.example.client.MessageEntryPoint$1MyHandler$1,val$serverResponseLabel2,com/example/client/MessageEntryPoint.java,86,-1
-c,com.example.client.MessageEntryPoint$1MyHandler$1::val$vPanel4,com.example.client.MessageEntryPoint$1MyHandler$1,val$vPanel4,com/example/client/MessageEntryPoint.java,86,-1
-MessageEntryPoint$lambda$0$Type,,com.example.client.MessageEntryPoint$lambda$0$Type,,com/example/client/MessageEntryPoint.java,55,-1
-G,com.example.client.MessageEntryPoint$lambda$0$Type::MessageEntryPoint$lambda$0$Type(Lcom/google/gwt/user/client/ui/Button;Lcom/google/gwt/user/client/ui/VerticalPanel;) <init>,com.example.client.MessageEntryPoint$lambda$0$Type,MessageEntryPoint$lambda$0$Type,com/example/client/MessageEntryPoint.java,55,0
-H,com.example.client.MessageEntryPoint$lambda$0$Type::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,com.example.client.MessageEntryPoint$lambda$0$Type,onClick,com/example/client/MessageEntryPoint.java,55,0
-a,com.example.client.MessageEntryPoint$lambda$0$Type::sendButton_0,com.example.client.MessageEntryPoint$lambda$0$Type,sendButton_0,com/example/client/MessageEntryPoint.java,55,-1
-b,com.example.client.MessageEntryPoint$lambda$0$Type::vPanel_1,com.example.client.MessageEntryPoint$lambda$0$Type,vPanel_1,com/example/client/MessageEntryPoint.java,55,-1
+MessageEntryPoint$1MyHandler,,com.example.client.MessageEntryPoint$1MyHandler,,com/example/client/MessageEntryPoint.java,62,-1
+v,com.example.client.MessageEntryPoint$1MyHandler::$sendMessageToServer(Lcom/example/client/MessageEntryPoint$1MyHandler;)V,com.example.client.MessageEntryPoint$1MyHandler,$sendMessageToServer,com/example/client/MessageEntryPoint.java,74,0
+w,com.example.client.MessageEntryPoint$1MyHandler::MessageEntryPoint$1MyHandler(Lcom/example/client/MessageEntryPoint;) <init>,com.example.client.MessageEntryPoint$1MyHandler,MessageEntryPoint$1MyHandler,com/example/client/MessageEntryPoint.java,62,0
+A,com.example.client.MessageEntryPoint$1MyHandler::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,com.example.client.MessageEntryPoint$1MyHandler,onClick,com/example/client/MessageEntryPoint.java,64,0
+B,com.example.client.MessageEntryPoint$1MyHandler::onKeyUp(Lcom/google/gwt/event/dom/client/KeyUpEvent;)V,com.example.client.MessageEntryPoint$1MyHandler,onKeyUp,com/example/client/MessageEntryPoint.java,68,0
+a,com.example.client.MessageEntryPoint$1MyHandler::this$01,com.example.client.MessageEntryPoint$1MyHandler,this$01,com/example/client/MessageEntryPoint.java,62,-1
+b,com.example.client.MessageEntryPoint$1MyHandler::val$closeButton7,com.example.client.MessageEntryPoint$1MyHandler,val$closeButton7,com/example/client/MessageEntryPoint.java,62,-1
+c,com.example.client.MessageEntryPoint$1MyHandler::val$nameField3,com.example.client.MessageEntryPoint$1MyHandler,val$nameField3,com/example/client/MessageEntryPoint.java,62,-1
+d,com.example.client.MessageEntryPoint$1MyHandler::val$sendButton4,com.example.client.MessageEntryPoint$1MyHandler,val$sendButton4,com/example/client/MessageEntryPoint.java,62,-1
+e,com.example.client.MessageEntryPoint$1MyHandler::val$serverResponseLabel6,com.example.client.MessageEntryPoint$1MyHandler,val$serverResponseLabel6,com/example/client/MessageEntryPoint.java,62,-1
+f,com.example.client.MessageEntryPoint$1MyHandler::val$textToServerLabel5,com.example.client.MessageEntryPoint$1MyHandler,val$textToServerLabel5,com/example/client/MessageEntryPoint.java,62,-1
+g,com.example.client.MessageEntryPoint$1MyHandler::val$vPanel8,com.example.client.MessageEntryPoint$1MyHandler,val$vPanel8,com/example/client/MessageEntryPoint.java,62,-1
+h,com.example.client.MessageEntryPoint$1MyHandler::val$warningLabel2,com.example.client.MessageEntryPoint$1MyHandler,val$warningLabel2,com/example/client/MessageEntryPoint.java,62,-1
+MessageEntryPoint$1MyHandler$1,,com.example.client.MessageEntryPoint$1MyHandler$1,,com/example/client/MessageEntryPoint.java,87,-1
+C,com.example.client.MessageEntryPoint$1MyHandler$1::$onFailure(Lcom/example/client/MessageEntryPoint$1MyHandler$1;Ljava/lang/Throwable;)V,com.example.client.MessageEntryPoint$1MyHandler$1,$onFailure,com/example/client/MessageEntryPoint.java,88,0
+D,com.example.client.MessageEntryPoint$1MyHandler$1::$onSuccess(Lcom/example/client/MessageEntryPoint$1MyHandler$1;Ljava/lang/String;)V,com.example.client.MessageEntryPoint$1MyHandler$1,$onSuccess,com/example/client/MessageEntryPoint.java,94,0
+F,com.example.client.MessageEntryPoint$1MyHandler$1::MessageEntryPoint$1MyHandler$1(Lcom/example/client/MessageEntryPoint$1MyHandler;) <init>,com.example.client.MessageEntryPoint$1MyHandler$1,MessageEntryPoint$1MyHandler$1,com/example/client/MessageEntryPoint.java,87,0
+a,com.example.client.MessageEntryPoint$1MyHandler$1::val$closeButton3,com.example.client.MessageEntryPoint$1MyHandler$1,val$closeButton3,com/example/client/MessageEntryPoint.java,87,-1
+b,com.example.client.MessageEntryPoint$1MyHandler$1::val$serverResponseLabel2,com.example.client.MessageEntryPoint$1MyHandler$1,val$serverResponseLabel2,com/example/client/MessageEntryPoint.java,87,-1
+c,com.example.client.MessageEntryPoint$1MyHandler$1::val$vPanel4,com.example.client.MessageEntryPoint$1MyHandler$1,val$vPanel4,com/example/client/MessageEntryPoint.java,87,-1
+MessageEntryPoint$lambda$0$Type,,com.example.client.MessageEntryPoint$lambda$0$Type,,com/example/client/MessageEntryPoint.java,56,-1
+G,com.example.client.MessageEntryPoint$lambda$0$Type::MessageEntryPoint$lambda$0$Type(Lcom/google/gwt/user/client/ui/Button;Lcom/google/gwt/user/client/ui/VerticalPanel;) <init>,com.example.client.MessageEntryPoint$lambda$0$Type,MessageEntryPoint$lambda$0$Type,com/example/client/MessageEntryPoint.java,56,0
+H,com.example.client.MessageEntryPoint$lambda$0$Type::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,com.example.client.MessageEntryPoint$lambda$0$Type,onClick,com/example/client/MessageEntryPoint.java,56,0
+a,com.example.client.MessageEntryPoint$lambda$0$Type::sendButton_0,com.example.client.MessageEntryPoint$lambda$0$Type,sendButton_0,com/example/client/MessageEntryPoint.java,56,-1
+b,com.example.client.MessageEntryPoint$lambda$0$Type::vPanel_1,com.example.client.MessageEntryPoint$lambda$0$Type,vPanel_1,com/example/client/MessageEntryPoint.java,56,-1
 MessageService_Proxy,,com.example.shared.MessageService_Proxy,,gen/com/example/shared/MessageService_Proxy.java,14,-1
 P,com.example.shared.MessageService_Proxy::$clinit()V,com.example.shared.MessageService_Proxy,$clinit,gen/com/example/shared/MessageService_Proxy.java,14,0
 Q,com.example.shared.MessageService_Proxy::$sendMessage(Lcom/example/shared/MessageService_Proxy;Ljava/lang/String;Lcom/google/gwt/user/client/rpc/AsyncCallback;)V,com.example.shared.MessageService_Proxy,$sendMessage,gen/com/example/shared/MessageService_Proxy.java,26,0
@@ -278,9 +278,9 @@ xe,com.google.gwt.lang.Cast::isJsObjectOrFunction(Ljava/lang/Object;)Z,com.googl
 ye,com.google.gwt.lang.Cast::maskUndefined(Ljava/lang/Object;)Ljava/lang/Object;,com.google.gwt.lang.Cast,maskUndefined,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Cast.java,294,0
 ze,com.google.gwt.lang.Cast::round_int(D)I,com.google.gwt.lang.Cast,round_int,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Cast.java,345,0
 me,com.google.gwt.lang.Cast::stringCastMap,com.google.gwt.lang.Cast,stringCastMap,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Cast.java,44,-1
-Ae,com.google.gwt.lang.ClassLiteralHolder::Lcom_example_client_MessageEntryPoint$1MyHandler$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_example_client_MessageEntryPoint$1MyHandler$1_2_classLit,com/example/client/MessageEntryPoint.java,86,-1
-Be,com.google.gwt.lang.ClassLiteralHolder::Lcom_example_client_MessageEntryPoint$1MyHandler_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_example_client_MessageEntryPoint$1MyHandler_2_classLit,com/example/client/MessageEntryPoint.java,61,-1
-Ce,com.google.gwt.lang.ClassLiteralHolder::Lcom_example_client_MessageEntryPoint$lambda$0$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_example_client_MessageEntryPoint$lambda$0$Type_2_classLit,com/example/client/MessageEntryPoint.java,55,-1
+Ae,com.google.gwt.lang.ClassLiteralHolder::Lcom_example_client_MessageEntryPoint$1MyHandler$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_example_client_MessageEntryPoint$1MyHandler$1_2_classLit,com/example/client/MessageEntryPoint.java,87,-1
+Be,com.google.gwt.lang.ClassLiteralHolder::Lcom_example_client_MessageEntryPoint$1MyHandler_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_example_client_MessageEntryPoint$1MyHandler_2_classLit,com/example/client/MessageEntryPoint.java,62,-1
+Ce,com.google.gwt.lang.ClassLiteralHolder::Lcom_example_client_MessageEntryPoint$lambda$0$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_example_client_MessageEntryPoint$lambda$0$Type_2_classLit,com/example/client/MessageEntryPoint.java,56,-1
 De,com.google.gwt.lang.ClassLiteralHolder::Lcom_example_client_MessageEntryPoint_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_example_client_MessageEntryPoint_2_classLit,com/example/client/MessageEntryPoint.java,23,-1
 Ee,com.google.gwt.lang.ClassLiteralHolder::Lcom_example_shared_MessageService_1Proxy_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_example_shared_MessageService_1Proxy_2_classLit,gen/com/example/shared/MessageService_Proxy.java,14,-1
 Fe,com.google.gwt.lang.ClassLiteralHolder::Lcom_example_shared_MessageService_1TypeSerializer_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_example_shared_MessageService_1TypeSerializer_2_classLit,gen/com/example/shared/MessageService_TypeSerializer.java,10,-1

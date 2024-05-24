@@ -1,0 +1,10 @@
+<!ELEMENT employees (employee*)>
+<!ELEMENT employee (name, email, phone, gender?, dob)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT dob (#PCDATA)> <!-- Date Format: DD-MM-YYYY -->
+<!ELEMENT gender (#PCDATA)>
+<!ATTLIST employee id ID #REQUIRED>
+<!ATTLIST employee is_employed (yes | no) "yes">
+

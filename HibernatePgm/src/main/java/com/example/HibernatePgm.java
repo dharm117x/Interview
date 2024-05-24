@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.hibernate.Cache;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.jdbc.Work;
 
@@ -15,18 +17,19 @@ import com.example.asso.entity.Passport;
 import com.example.asso.entity.Student;
 import com.example.util.HibernateUtil;
 
-import net.sf.ehcache.Cache;
-import net.sf.ehcache.CacheManager;
-
 public class HibernatePgm {
 	public static void main(String[] args) {
 		Student student = new Student("Ramesh", "Fadatare", "rameshfadatare@javaguides.com");
 		Transaction transaction = null;
 
+		SessionFactory factory = HibernateUtil.getSessionFactory();
+		
 		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
 			// start a transaction
 			transaction = session.beginTransaction();
 			// save the student objects
+			Cache cache = factory.getCache();
+			System.out.println("CH1-->"+cache);
 			
 			Address add1 = new Address("Bihar", "10001");
 			add1.setStudent(student);
@@ -44,6 +47,9 @@ public class HibernatePgm {
 			session.save(student);
 			// commit transaction
 			transaction.commit();
+			
+			Cache cache2 = factory.getCache();
+			System.out.println("CH2-->"+cache2);
 			
 		} catch (Exception e) {
 			if (transaction != null) {
@@ -64,9 +70,6 @@ public class HibernatePgm {
 
 		System.out.println("---------------Load from 2 cache-----------------");
 		
-		CacheManager instance = CacheManager.getInstance();
-		Cache cache = instance.getCache("students");
-		System.out.println("cache:: "+cache);
 		
 		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
 
@@ -96,7 +99,6 @@ public class HibernatePgm {
 			e.printStackTrace();
 		}
 
-		instance.shutdown();
 
 		HibernateUtil.shutdown();
 	}

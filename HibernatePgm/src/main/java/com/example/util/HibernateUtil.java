@@ -1,6 +1,6 @@
 package com.example.util;
 
-import java.io.File;
+import java.util.Properties;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -8,7 +8,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
-import com.fasterxml.classmate.AnnotationConfiguration;
+import jakarta.persistence.Cache;
 
 public class HibernateUtil {
 	private static StandardServiceRegistry registry;
@@ -36,15 +36,32 @@ public class HibernateUtil {
 		return sessionFactory;
 	}
 
+	public static Properties propertyLoad() {
+		Properties properties = null;
+		if (properties == null) {
+			properties = new Properties();
+			try {
+				properties.load(HibernateUtil.class.getResourceAsStream("/config.properties"));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return properties;
+	}
+
+	public static Cache getCache() {
+		return sessionFactory.getCache();
+	}
+
 	public static void shutdown() {
 		if (registry != null) {
 			System.out.println("HibernateUtil.shutdown()");
 			StandardServiceRegistryBuilder.destroy(registry);
 		}
 	}
-	
+
 	public static SessionFactory getSessionFactory_OLD() {
-		
+
 		return sessionFactory;
 	}
 }

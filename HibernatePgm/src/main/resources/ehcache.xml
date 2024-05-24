@@ -1,49 +1,5 @@
-<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-		 xsi:noNamespaceSchemaLocation="../config/ehcache.xsd">
-		 
-	<diskStore path="java.io.tmpdir"/>
-    <Cache	name="students"
-            maxElementsInMemory="10000"
-            eternal="false"
-            timeToIdleSeconds="120"
-            timeToLiveSeconds="120"
-            maxElementsOnDisk="10000000"
-            diskExpiryThreadIntervalSeconds="120"
-            memoryStoreEvictionPolicy="LRU">
-        <persistence strategy="localTempSwap"/>
-   </Cache>
-   
-    <Cache	name="customcache"
-            maxElementsInMemory="10000"
-            eternal="false"
-            timeToIdleSeconds="120"
-            timeToLiveSeconds="120"
-            maxElementsOnDisk="10000000"
-            diskExpiryThreadIntervalSeconds="120"
-            memoryStoreEvictionPolicy="LRU">
-        <persistence strategy="localTempSwap"/>
-   </Cache>
-   
-   <Cache name="org.hibernate.cache.internal.StandardQueryCache"
-            maxElementsInMemory="10000"
-            eternal="false"
-            timeToLiveSeconds="86400"
-            overflowToDisk="false"
-            memoryStoreEvictionPolicy="LRU" >
+<ehcache:config 
+    xmlns:ehcache="http://www.ehcache.org/v3"
+    xmlns:jcache="http://www.ehcache.org/v3/jsr107">
     
-    </Cache>
-   
-   
-		 
-    <defaultCache
-            maxElementsInMemory="10000"
-            eternal="false"
-            timeToIdleSeconds="120"
-            timeToLiveSeconds="120"
-            maxElementsOnDisk="10000000"
-            diskExpiryThreadIntervalSeconds="120"
-            memoryStoreEvictionPolicy="LRU">
-        <persistence strategy="localTempSwap"/>
-   </defaultCache>
-	
-</ehcache>
+</ehcache:config>

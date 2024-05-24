@@ -19,6 +19,10 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.mysql.jdbc.Driver;
+
+import jakarta.persistence.EntityManager;
+
 @Configuration
 @EnableTransactionManagement(proxyTargetClass = true)
 @PropertySource("app.properties")
@@ -38,6 +42,11 @@ public class AppConfig {
 		return em;
 	}
 
+	@Bean
+	public EntityManager entityManager() {
+		return entityManagerFactory().getObject().createEntityManager();
+	}
+	
 //	@Bean
 	public PersistenceExceptionTranslationPostProcessor exceptionTranslation(){
 	    return new PersistenceExceptionTranslationPostProcessor();
@@ -73,9 +82,10 @@ public class AppConfig {
 	@Bean
 	public DataSource dataSource() {
 		SimpleDriverDataSource sds = new SimpleDriverDataSource();
-		sds.setDriverClass(oracle.jdbc.driver.OracleDriver.class);
-		sds.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
-		sds.setUsername("hibernatedb");
+		sds.setDriverClass(Driver.class);
+		//sds.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
+		sds.setUrl("jdbc:mysql://localhost:3306/hibernatedb");
+		sds.setUsername("root");
 		sds.setPassword("admin");
 		return sds;
 	}
@@ -84,9 +94,17 @@ public class AppConfig {
 		Properties props = new Properties();
 		props.setProperty("hibernate.hbm2ddl.auto", "create");
 		props.setProperty("hibernate.show_sql", "true");
-//		props.setProperty("hibernate.current_session_context_class", "thread"); // Not with @Transactional
+		props.setProperty("hibernate.generate_statistics", "true");
+		props.setProperty("hibernate.cache.use_query_cache", "true");
+		
+		props.setProperty("hibernate.cache.use_second_level_cache", "true");
+		props.setProperty("hibernate.cache.region.factory_class", "jcache");
+		props.setProperty("hibernate.javax.cache.provider", "org.ehcache.jsr107.EhcacheCachingProvider");
+
+		//		props.setProperty("hibernate.current_session_context_class", "thread"); // Not with @Transactional
 //		props.setProperty("hibernate.transaction.jta.platform", "org.hibernate.engine.transaction.jta.platform.internal.WeblogicJtaPlatform");
-		props.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
+//		props.setProperty("hibernate.dialect"  , "org.hibernate.dialect.Oracle10gDialect");
+//		props.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
 		return props;
 	}
 }

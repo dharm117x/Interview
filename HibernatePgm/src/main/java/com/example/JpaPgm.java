@@ -2,23 +2,19 @@ package com.example;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-
 import com.example.asso.entity.Address;
 import com.example.asso.entity.Student;
 import com.example.util.JPAUtil;
 
-import net.sf.ehcache.CacheManager;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityTransaction;
 
 public class JpaPgm {
 	public static void main(String[] args) {
 		EntityManagerFactory emFactory = JPAUtil.getEMFactory();
 		EntityManager em = emFactory.createEntityManager();
 		
-		CacheManager manager = CacheManager.getInstance();
-		List<CacheManager> list = manager.ALL_CACHE_MANAGERS;
 
 		try {
 
@@ -52,7 +48,6 @@ public class JpaPgm {
 //			delete(em, student.get(0));
 	
 		} finally {
-			CacheManager.getInstance().shutdown();
 			emFactory.close();
 		}
 			

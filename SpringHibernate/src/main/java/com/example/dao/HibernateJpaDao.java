@@ -3,12 +3,6 @@ package com.example.dao;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceUnitUtil;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.env.Environment;
@@ -17,6 +11,12 @@ import org.springframework.transaction.NoTransactionException;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.interceptor.TransactionAspectSupport;
+
+import com.example.entity.Country;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityTransaction;
 
 @Service
 @Transactional(transactionManager = "jpaTransactionManager")
@@ -27,6 +27,7 @@ public class HibernateJpaDao {
     private EntityManagerFactory managerFactory;
 	@Autowired
 	private Environment env;
+	@Autowired EntityManager em;
 
 	public void create(Object object) {
 		System.out.println("App :: " + env.getProperty("app"));
@@ -38,23 +39,23 @@ public class HibernateJpaDao {
 	      }
 	      System.out.println(status!=null? "active transaction": "no transaction");
 		
-		EntityManager em = managerFactory.createEntityManager();
 		EntityTransaction transaction = em.getTransaction();
-//		transaction.begin();
+		transaction.begin();
 		em.persist(object);
-//		transaction.commit();
+		transaction.commit();
 	}
 	
 	public void update(Object object) {
-		EntityManager manager = managerFactory.createEntityManager();
-		
-		Object merge = manager.merge(object);
+		Object merge = em.merge(object);
 //		manager.refresh(merge);
-		manager.persist(merge);	
+		em.persist(merge);	
 	}
 	
-	public List findAll() {
-		EntityManager manager = managerFactory.createEntityManager();
-		return manager.createQuery("from Country").getResultList();
+	public List<Country> findAll() {
+		return em.createQuery("from Country", Country.class).getResultList();
+	}
+	
+	public Country findOne() {
+		return em.find(Country.class, 2);
 	}
 }

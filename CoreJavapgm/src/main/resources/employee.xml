@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees SYSTEM "employee.dtd" >
+<employees>
+  <employee id="idvalue0" is_employed="yes">
+    <name>Dharmendra</name>
+    <email>email</email>
+    <phone>phone</phone>
+    <gender>gender</gender>
+    <dob>dob</dob>
+  </employee>
+</employees>

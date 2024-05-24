@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metrics version="1" >
- <module elapsed="5759" >
+ <module elapsed="22099" >
   <sources count="3371">
    <source name="com/example/client/MessageEntryPoint.java" />
    <source name="com/example/shared/MessageService.java" />
@@ -7459,7 +7459,7 @@
   </types>
  </module>
  <precompilations>
-  <precompilation base="0" ids="0" elapsed="8341" >
+  <precompilation base="0" ids="0" elapsed="24398" >
    <types kind="ast" count="662">
     <type name="com.example.client.MessageEntryPoint" />
     <type name="com.example.client.MessageEntryPoint$1MyHandler" />
@@ -8146,7 +8146,7 @@
  </precompilation>
  </precompilations>
  <compilations>
-  <compilation  id="0" elapsed="2896" totalElapsed="11247"  description="ClientBundle.enableInlining=true,compiler.emulatedStack=false,compiler.predeclare.cross.fragment.references=false,compiler.stackMode=native,compiler.useSymbolMaps=false,gwt.cspCompatModeEnabled=false,gwt.enableDebugId=false,gwt.forceBidi=false,gwt.logging.simpleConsoleHandler=ENABLED,gwt.suppressNonStaticFinalFieldWarnings=false,gwt.uncaughtexceptionhandler.windowonerror=REPORT_IF_NO_HANDLER,history.noDoubleEncoding=false,jre.checks.api=AUTO,jre.checks.bounds=AUTO,jre.checks.checkLevel=NORMAL,jre.checks.numeric=AUTO,jre.checks.type=AUTO,jre.logging.simpleConsoleHandler=ENABLED,locale=default,rpc.XserializeFinalFields=false,superdevmode=off,user.agent=safari,videoElementSupport=maybe,webApiUsage=modern,audioElementSupport=maybe,canvasElementSupport=maybe,compiler.useSourceMaps=false,dragEventSupport=maybe,jre.debugMode=DISABLED,touchEventSupport=maybe,gwt.logging.enabled=FALSE,jre.checkedMode=DISABLED,jre.logging.logLevel=OFF">
+  <compilation  id="0" elapsed="2651" totalElapsed="27060"  description="ClientBundle.enableInlining=true,compiler.emulatedStack=false,compiler.predeclare.cross.fragment.references=false,compiler.stackMode=native,compiler.useSymbolMaps=false,gwt.cspCompatModeEnabled=false,gwt.enableDebugId=false,gwt.forceBidi=false,gwt.logging.simpleConsoleHandler=ENABLED,gwt.suppressNonStaticFinalFieldWarnings=false,gwt.uncaughtexceptionhandler.windowonerror=REPORT_IF_NO_HANDLER,history.noDoubleEncoding=false,jre.checks.api=AUTO,jre.checks.bounds=AUTO,jre.checks.checkLevel=NORMAL,jre.checks.numeric=AUTO,jre.checks.type=AUTO,jre.logging.simpleConsoleHandler=ENABLED,locale=default,rpc.XserializeFinalFields=false,superdevmode=off,user.agent=safari,videoElementSupport=maybe,webApiUsage=modern,audioElementSupport=maybe,canvasElementSupport=maybe,compiler.useSourceMaps=false,dragEventSupport=maybe,jre.debugMode=DISABLED,touchEventSupport=maybe,gwt.logging.enabled=FALSE,jre.checkedMode=DISABLED,jre.logging.logLevel=OFF">
    <javascript size="63509" fragments="1">
     <fragment initial="true" size="63509" />
    </javascript>

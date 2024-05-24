@@ -1,9 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>java.example</groupId>
-  <artifactId>CoreJavapgm</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-<dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>java.example</groupId>
+	<artifactId>CoreJavapgm</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<dependencies>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
@@ -20,15 +23,31 @@
 			<version>0.15.3</version>
 		</dependency>
 		<dependency>
-			<groupId>javax.xml.bind</groupId>
-			<artifactId>jaxb-api</artifactId>
-			<version>2.3.1</version>
+			<groupId>jakarta.xml.bind</groupId>
+			<artifactId>jakarta.xml.bind-api</artifactId>
+			<version>4.0.0</version>
 		</dependency>
 		<dependency>
-			<groupId>org.glassfish.jaxb</groupId>
-			<artifactId>jaxb-runtime</artifactId>
-			<version>2.3.1</version>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>4.0.4</version>
 		</dependency>
+		<dependency>
+			<groupId>in.jlibs</groupId>
+			<artifactId>jlibs-xml</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>in.jlibs</groupId>
+			<artifactId>jlibs-xsd</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.15.1</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -38,8 +57,48 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
 				<configuration>
-					<release>11</release>
+					<release>17</release>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxb2-maven-plugin</artifactId>
+				<version>3.1.0</version>
+				<executions>
+					<execution>
+						<id>xjc</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+						<configuration>
+							<xjbSources>
+								<xjbSource>src/main/resources/global.xjb</xjbSource>
+							</xjbSources>
+							<sources>
+								<source>src/main/resources/user.xsd</source>
+							</sources>
+							<outputDirectory>${basedir}/src/main/java</outputDirectory>
+							<clearOutputDir>false</clearOutputDir>
+						</configuration>
+					</execution>
+					<execution>
+						<id>xjc1</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>src/main/resources/user.xsd</source>
+							</sources>
+							<outputDirectory>${basedir}/src/main/java</outputDirectory>
+							<clearOutputDir>false</clearOutputDir>
+							<packageName>com.project.generated</packageName>
+							<noPackageLevelAnnotations>true</noPackageLevelAnnotations>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

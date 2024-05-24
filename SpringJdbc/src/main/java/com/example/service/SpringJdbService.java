@@ -15,6 +15,10 @@ public class SpringJdbService {
 	@Autowired
 	SpringJdbcDao springJdbcDao;
 	
+	public void addEmp(Employee emp) {
+		springJdbcDao.addEmployee(emp);
+	}
+	
 	@Transactional
 	public Employee getData() {
 		List<Employee> test = springJdbcDao.empSearch();
