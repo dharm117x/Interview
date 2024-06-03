@@ -3,7 +3,7 @@
   <employee id="1">
     <name>name</name>
     <email>email</email>
+    <phone>0</phone>
     <dob>2001-01-01</dob>
-    <gender>gender</gender>
   </employee>
 </employees>

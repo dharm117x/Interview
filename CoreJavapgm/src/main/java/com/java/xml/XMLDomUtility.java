@@ -33,7 +33,7 @@ public class XMLDomUtility {
 	public static Document loadDocument(String filename) {
 		try {
 			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-			Document doc = builder.parse(new File("src/main/resources/"+filename));
+			Document doc = builder.parse(new File("src/main/resources/" + filename));
 			doc.getDocumentElement().normalize();
 			return doc;
 		} catch (Exception e) {
@@ -44,41 +44,42 @@ public class XMLDomUtility {
 
 	public static Map<String, List<String>> readXsd(Document document) {
 		Map<String, List<String>> map = new HashedMap<>();
-		List<String> els= new ArrayList<>();
-		List<String> atts= new ArrayList<>();
+		List<String> els = new ArrayList<>();
+		List<String> atts = new ArrayList<>();
 
 		try {
 			NodeList list = document.getElementsByTagName("xs:element");
 			// loop to print data
 			for (int i = 0; i < list.getLength(); i++) {
 				Element el = (Element) list.item(i);
-				els.add(el.getNodeName());
 				if (el.hasAttributes()) {
 					String name = el.getAttribute("name");
 					String type = el.getAttribute("type");
-					System.out.println(name + "-----" + type);
+					if (!"".equals(type))
+						els.add(name);
 				}
+
 			}
-			
+
 			NodeList list1 = document.getElementsByTagName("xs:attribute");
 			// loop to print data
 			for (int i = 0; i < list1.getLength(); i++) {
 				Element el = (Element) list1.item(i);
-				atts.add(el.getNodeName());
 				if (el.hasAttributes()) {
 					String name = el.getAttribute("name");
 					String type = el.getAttribute("type");
-					System.out.println(name + "-----" + type);
+					if (!"".equals(type))
+						atts.add(name);
 				}
 			}
-			
+
 			map.put("EL", els);
 			map.put("AT", atts);
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return map;
 	}
 
@@ -120,7 +121,7 @@ public class XMLDomUtility {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void print(Document doc) {
 		try {
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -151,10 +152,10 @@ public class XMLDomUtility {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
-		
+
 		return xsdErrorHandler.getExceptions();
 	}
-	
+
 	public static NodeList getNodeList(Document doc, String expression) {
 		try {
 			XPath xPath = XPathFactory.newInstance().newXPath();
@@ -165,11 +166,11 @@ public class XMLDomUtility {
 		}
 		return null;
 	}
-	
+
 	public static Node getNode(Document doc, String expression) {
 		try {
 			XPath xPath = XPathFactory.newInstance().newXPath();
-			Node node = (Node) xPath.compile("//"+expression).evaluate(doc, XPathConstants.NODE);
+			Node node = (Node) xPath.compile("//" + expression).evaluate(doc, XPathConstants.NODE);
 			return node;
 		} catch (XPathExpressionException e) {
 			e.printStackTrace();

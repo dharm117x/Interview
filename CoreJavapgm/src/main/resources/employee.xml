@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE employees SYSTEM "employee.dtd" >
 <employees>
-  <employee id="idvalue0" is_employed="yes">
-    <name>Dharmendra</name>
-    <email>email</email>
-    <phone>phone</phone>
-    <gender>gender</gender>
-    <dob>dob</dob>
+  <employee id="101" is_employed="yes">
+    <name>Dharmendra kumar</name>
+    <email>dharm@gmail.com</email>
+    <phone>90909090</phone>
+    <gender>Male</gender>
+    <dob>1983-01-01</dob>
   </employee>
 </employees>

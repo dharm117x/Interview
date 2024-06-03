@@ -11,7 +11,7 @@ public class StreamApiTest {
 		datas.add("2");
 		datas.add("4");
 		datas.add("3");
-		
+
 		findByName(datas, "1");
 		sortByName(datas);
 	}
@@ -28,12 +28,10 @@ public class StreamApiTest {
 	static void sortByName(List<String> names) {
 		List<String> datas = names.stream().collect(Collectors.toList());
 		System.out.println(datas);
-		
+
 		names.stream().sorted((o1, o2) -> {
 			return o1.compareTo(o2);
 		}).forEach(System.out::print);
 	}
-	
-	
 
 }
