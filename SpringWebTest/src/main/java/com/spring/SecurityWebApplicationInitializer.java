@@ -1,16 +1,17 @@
 package com.spring;
 
-import javax.servlet.ServletContext;
-
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 import org.springframework.web.multipart.support.MultipartFilter;
 
+import jakarta.servlet.ServletContext;
+
 public class SecurityWebApplicationInitializer extends AbstractSecurityWebApplicationInitializer {
 	
+
 	@Override
-	protected void beforeSpringSecurityFilterChain(ServletContext servletContext) {
-		System.out.println("SecurityWebApplicationInitializer.beforeSpringSecurityFilterChain()");
- 		insertFilters(servletContext, new MultipartFilter());
+	protected void afterSpringSecurityFilterChain(ServletContext servletContext) {
+		System.out.println("SecurityWebApplicationInitializer.afterSpringSecurityFilterChain()");
+		insertFilters(servletContext, new MultipartFilter());
 	}
 	
 	

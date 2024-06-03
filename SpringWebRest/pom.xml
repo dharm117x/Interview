@@ -11,19 +11,21 @@
 		<spring.version>6.1.6</spring.version>
 		<java.version>11</java.version>
 		<jakson.version>2.15.2</jakson.version>
+		<jakarta.version>5.0.0</jakarta.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
+			<groupId>jakarta.servlet</groupId>
+			<artifactId>jakarta.servlet-api</artifactId>
+			<version>${jakarta.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
+			<groupId>jakarta.el</groupId>
+			<artifactId>jakarta.el-api</artifactId>
+			<version>${jakarta.version}</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>commons-fileupload</groupId>

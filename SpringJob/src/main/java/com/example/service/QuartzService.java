@@ -26,13 +26,13 @@ public class QuartzService {
 	@Bean
 	public Trigger trigger(JobDetail job) {
 		return TriggerBuilder.newTrigger().forJob(job).withIdentity("Qrtz_Trigger").withDescription("Sample trigger")
-				.withSchedule(SimpleScheduleBuilder.simpleSchedule().repeatForever().withIntervalInHours(1)).build();
+				.withSchedule(SimpleScheduleBuilder.simpleSchedule().repeatForever().withIntervalInMinutes(1)).build();
 	}
 
-	//@Bean
-	public CronTrigger cronTrigger() {
-		return TriggerBuilder.newTrigger().withIdentity("trigger3", "group1")
-				.withSchedule(CronScheduleBuilder.cronSchedule("0 0/2 8-17 * * ?")).forJob("myJob", "group1").build();
+	@Bean
+	public CronTrigger cronTrigger(JobDetail job) {
+		return TriggerBuilder.newTrigger().forJob(job).withIdentity("cron trigger", "group1").withDescription("Cron trigger")
+				.withSchedule(CronScheduleBuilder.cronSchedule("* * * * * ?")).build();
 	}
 	
 	public void jobStart() throws SchedulerException {

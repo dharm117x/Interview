@@ -1,4 +1,4 @@
- package com.spring;
+package com.spring;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -22,5 +22,4 @@ public class ServlateInitilizer extends AbstractAnnotationConfigDispatcherServle
 		return new String[] {"/"};
 	}
 
-	
 }

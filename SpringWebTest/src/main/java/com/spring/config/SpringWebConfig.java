@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -19,18 +19,18 @@ import com.spring.intercepter.LogIntercepter;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan({"com.spring"})
-@Import({SpringSecurityConfig.class})
+@ComponentScan({ "com.spring" })
+@Import({ SpringSecurityConfig.class })
 public class SpringWebConfig implements WebMvcConfigurer {
 
 	@Bean
-    public SolrClient solrClient() {
+	public SolrClient solrClient() {
 		String urlString = "http://localhost:8983/solr/bigboxstore";
 		HttpSolrClient solr = new HttpSolrClient.Builder(urlString).build();
 		solr.setParser(new XMLResponseParser());
-        return solr;
-    }
-	
+		return solr;
+	}
+
 	@Bean
 	public InternalResourceViewResolver viewresolver() {
 		InternalResourceViewResolver ivr = new InternalResourceViewResolver();
@@ -39,23 +39,22 @@ public class SpringWebConfig implements WebMvcConfigurer {
 		ivr.setViewClass(JstlView.class);
 		return ivr;
 	}
-	
+
 	@Bean(name = "filterMultipartResolver")
-	 public CommonsMultipartResolver getMultipartResolver() {
-	      CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
-	      return multipartResolver;
-	 }
-	
+	public StandardServletMultipartResolver getMultipartResolver() {
+		StandardServletMultipartResolver multipartResolver = new StandardServletMultipartResolver();
+		return multipartResolver;
+	}
+
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(new LogIntercepter());
 	}
-	
+
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/uploadFileView.html").setViewName("fileuploadPage");
 		registry.addViewController("/singlieUploadFileView.html").setViewName("singleFileuploadPage");
 		registry.addViewController("/sessionExpiredPage.html").setViewName("sessionExpiredPage");
-		
-	}
-	
-}
 
+	}
+
+}
